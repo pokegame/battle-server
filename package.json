@@ -1,0 +1,20 @@
+{
+  "name": "pokemon-battle-server",
+  "version": "0.0.0",
+  "description": "Pokemon battle server",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js"
+  },
+  "author": "Federkun <federkun@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^8.0.27",
+    "@types/socket.io": "^1.4.30",
+    "pokemon-battle-engine": "github:Federkun/pokemon-battle-engine#precompiled",
+    "socket.io": "^2.0.3"
+  },
+  "devDependencies": {
+    "typescript": "^2.5.2"
+  }
+}
