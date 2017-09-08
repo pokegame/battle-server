@@ -1,6 +1,6 @@
 import * as assert from 'assert';
 import * as sinon from 'sinon';
-import { createConnection, DummyRoom } from './mock';
+import { createConnection, DummyRoom } from './stub';
 import { Connection } from '../src/Connection'
 
 describe('Room', function() {

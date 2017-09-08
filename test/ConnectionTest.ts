@@ -1,6 +1,6 @@
 import * as assert from 'assert';
 import * as sinon from 'sinon';
-import { createSocket } from './mock';
+import { createSocket } from './stub';
 import { Connection } from '../src/Connection';
 
 describe('Connection', function() {
