@@ -1,7 +1,6 @@
 import * as assert from 'assert';
 import * as sinon from 'sinon';
 import { createConnection, DummyRoom } from './stub';
-import { Connection } from '../src/Connection'
 
 describe('Room', function() {
   const sandbox = sinon.sandbox.create();
@@ -68,11 +67,13 @@ describe('Room', function() {
         }
       };
 
-      const connection = sinon.spy(Connection.prototype, 'send');
-      const room = new DummyRoom('r1');
-      room.send(createConnection('u1'), expect.payload);
+      const connection = createConnection('u1');
+      const spy = sinon.spy(connection, 'send');
 
-      sinon.assert.calledWith(connection, expect);
+      const room = new DummyRoom('r1');
+      room.send(connection, expect.payload);
+
+      sinon.assert.calledWith(spy, expect);
     });
   });
 });
