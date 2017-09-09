@@ -1,1 +1,1 @@
-# pokemon-battle-server
+# Pokegame - Battle server
