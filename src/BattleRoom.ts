@@ -1,7 +1,7 @@
+import { createBattle, createState, decisions } from '@pokegame/battle-engine';
 import { Connection } from './Connection';
 import * as Protocol from './Protocol';
 import { Room } from './Room';
-import { createBattle, createState, decisions } from 'pokemon-battle-engine';
 
 export class BattleRoom extends Room {
   private battleState: any;

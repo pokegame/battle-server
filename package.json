@@ -10,13 +10,13 @@
   "author": "Federkun <federkun@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^8.0.27",
+    "@pokegame/battle-engine": "0.0.1",
+    "@types/node": "^8.0.28",
     "@types/socket.io": "^1.4.30",
-    "pokemon-battle-engine": "github:Federkun/pokemon-battle-engine#precompiled",
     "socket.io": "^2.0.3"
   },
   "devDependencies": {
-    "@types/mocha": "^2.2.42",
+    "@types/mocha": "^2.2.43",
     "@types/sinon": "^2.3.3",
     "mocha": "^3.5.0",
     "sinon": "^3.2.1",
