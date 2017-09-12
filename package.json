@@ -15,7 +15,7 @@
     "@types/socket.io": "^1.4.30",
     "express": "^4.15.4",
     "socket.io": "^2.0.3",
-    "socketio-jwt": "^4.5.0"
+    "socketio-jwt-auth": "0.0.5"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.43",
