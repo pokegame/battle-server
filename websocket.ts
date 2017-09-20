@@ -4,15 +4,15 @@ import { Server } from 'http';
 import { Client } from './src/Client';
 import { Connection } from './src/Connection';
 
-export function attach(httpServer: Server, {
+export function attachWss(httpServer: Server, {
   rooms,
-  secretKey
+  pubKey
 }) {
   const io = socketio(httpServer);
 
   io.use(
     socketioJwt.authenticate({
-      secret: secretKey,
+      secret: pubKey,
       algorithm: 'RS256'
     }, (payload, cb) => {
       if (!payload.user_id) {
