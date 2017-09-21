@@ -42,10 +42,10 @@ export class BattleRoom extends Room {
       battleState: this.battleState,
     });
 
-    if (connection.uid in this.request.choices) {
+    if (this.battleState.actors.includes(connection.uid)) {
       this.send(connection, {
         type: Protocol.REQUEST_DECISION,
-        choices: this.request.choices[connection.uid]
+        choices: connection.uid in this.request.choices ? this.request.choices[connection.uid] : []
       });
     }
   }
@@ -90,13 +90,13 @@ export class BattleRoom extends Room {
     this.request = { choices, dispatch };
 
     this.connections.forEach((connection) => {
-      if (!(connection.uid in this.request.choices)) {
+      if (!this.battleState.actors.includes(connection.uid)) {
         return;
       }
 
       this.send(connection, {
         type: Protocol.REQUEST_DECISION,
-        choices: this.request.choices[connection.uid]
+        choices: connection.uid in this.request.choices ? this.request.choices[connection.uid] : []
       });
     });
   }
